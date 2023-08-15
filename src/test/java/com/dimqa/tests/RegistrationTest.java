@@ -14,24 +14,24 @@ public class RegistrationTest extends TestBase {
 
     @Test
     public void testRegistration() {
-        header.clickAccount();
-        accountPage.clickRegistration();
+        header().clickAccount();
+        accountPage().clickRegistration();
         User user = userGenerator.random();
-        registrationPage.fillForm(user);
-        registrationPage.clickRegistrationButton();
-        loginPage.waitingForLoading();
-        Assert.assertEquals(loginPage.getHeadingText(), Texts.LOGIN_PAGE_HEADING);
-        Assert.assertEquals(driver.getCurrentUrl(), URLs.LOGIN_PAGE);
+        registrationPage().fillForm(user);
+        registrationPage().clickRegistrationButton();
+        loginPage().waitingForLoading();
+        Assert.assertEquals(loginPage().getHeadingText(), Texts.LOGIN_PAGE_HEADING);
+        Assert.assertEquals(getCurrentUrl(), URLs.LOGIN_PAGE);
     }
 
     @Test
     public void invalidPasswordLength() {
-        header.clickAccount();
-        accountPage.clickRegistration();
-        registrationPage.fillPassword(userGenerator.getInvalidPassword());
-        registrationPage.clickRegistrationButton();
-        Assert.assertTrue(registrationPage.getPasswordAttribute().contains("input_status_error"));
-        String actualErrorText = registrationPage.getPasswordErrorMessage();
+        header().clickAccount();
+        accountPage().clickRegistration();
+        registrationPage().fillPassword(userGenerator.getInvalidPassword());
+        registrationPage().clickRegistrationButton();
+        Assert.assertTrue(registrationPage().getPasswordAttribute().contains("input_status_error"));
+        String actualErrorText = registrationPage().getPasswordErrorMessage();
         String expectedErrorText = Texts.LOGIN_PAGE_PASSWORD_ERROR_MESSAGE;
         Assert.assertEquals(actualErrorText, expectedErrorText);
     }

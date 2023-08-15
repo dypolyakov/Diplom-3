@@ -11,11 +11,11 @@ public class LogoutTest extends TestBase {
     Credentials credentials = new Credentials(Users.REGISTERED);
     @Test
     public void logout() {
-        header.clickAccount();
-        loginPage.fillLoginForm(credentials);
-        header.clickAccount();
-        accountPage.clickExitButton();
-        Assert.assertEquals(loginPage.getHeadingText(), Texts.LOGIN_PAGE_HEADING);
+        header().clickAccount();
+        loginPage().fillLoginForm(credentials);
+        header().clickAccount();
+        accountPage().clickExitButton();
+        Assert.assertEquals(loginPage().getHeadingText(), Texts.LOGIN_PAGE_HEADING);
 
     }
 }

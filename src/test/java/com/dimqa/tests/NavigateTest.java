@@ -12,25 +12,25 @@ public class NavigateTest extends TestBase {
 
     @Test
     public void goToAccountPage() {
-        header.clickAccount();
-        loginPage.fillLoginForm(credentials);
-        header.clickAccount();
-        Assert.assertEquals(accountPage.getInformationText(), Texts.ACCOUNT_PAGE_INFO_TEXT);
+        header().clickAccount();
+        loginPage().fillLoginForm(credentials);
+        header().clickAccount();
+        Assert.assertEquals(accountPage().getInformationText(), Texts.ACCOUNT_PAGE_INFO_TEXT);
     }
 
     @Test
     public void goToConstructor() {
-        header.clickAccount();
-        loginPage.fillLoginForm(credentials);
-        header.clickConstructor();
-        Assert.assertEquals(homePage.getOrderButtonText(), Texts.HOME_PAGE_ORDER_BUTTON_TEXT);
+        header().clickAccount();
+        loginPage().fillLoginForm(credentials);
+        header().clickConstructor();
+        Assert.assertEquals(homePage().getOrderButtonText(), Texts.HOME_PAGE_ORDER_BUTTON_TEXT);
     }
 
     @Test
     public void goToMainPage() {
-        header.clickAccount();
-        loginPage.fillLoginForm(credentials);
-        header.clickLogo();
-        Assert.assertEquals(homePage.getOrderButtonText(), Texts.HOME_PAGE_ORDER_BUTTON_TEXT);
+        header().clickAccount();
+        loginPage().fillLoginForm(credentials);
+        header().clickLogo();
+        Assert.assertEquals(homePage().getOrderButtonText(), Texts.HOME_PAGE_ORDER_BUTTON_TEXT);
     }
 }

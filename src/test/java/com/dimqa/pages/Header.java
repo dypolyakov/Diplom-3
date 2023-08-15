@@ -2,6 +2,10 @@ package com.dimqa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Header {
     private final WebDriver driver;
@@ -14,6 +18,7 @@ public class Header {
     }
 
     public void clickAccount() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(account));
         driver.findElement(account).click();
     }
 
