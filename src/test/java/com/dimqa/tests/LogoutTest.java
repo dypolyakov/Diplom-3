@@ -3,7 +3,6 @@ package com.dimqa.tests;
 import com.dimqa.constants.Texts;
 import com.dimqa.constants.Users;
 import com.dimqa.model.Credentials;
-import com.dimqa.tests.TestBase;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;

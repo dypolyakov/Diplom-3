@@ -4,7 +4,6 @@ import com.dimqa.constants.Texts;
 import com.dimqa.generator.UserGenerator;
 import com.dimqa.model.User;
 import com.dimqa.constants.URLs;
-import com.dimqa.tests.TestBase;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
