@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.Browser;
 
@@ -26,6 +27,11 @@ public class TestBase {
             driver = new FirefoxDriver();
         } else if (browser.equals(Browser.CHROME.browserName())) {
             driver = new ChromeDriver();
+        } else if (browser.equals(("yandex"))) {
+            System.setProperty("driver.chrome.driver", "src/test/resources/yandexdriver");
+            ChromeOptions options = new ChromeOptions();
+            options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
+            driver = new ChromeDriver(options);
         }
 
         driver.get(URLs.MAIN_PAGE);
