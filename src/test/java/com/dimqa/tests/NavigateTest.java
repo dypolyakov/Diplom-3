@@ -4,6 +4,8 @@ import com.dimqa.constants.Texts;
 import com.dimqa.constants.Users;
 import com.dimqa.model.Credentials;
 import com.dimqa.tests.TestBase;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,6 +13,8 @@ public class NavigateTest extends TestBase {
     Credentials credentials = new Credentials(Users.REGISTERED);
 
     @Test
+    @DisplayName("Go to the profile page")
+    @Description("Verifying that the user can get to the account page")
     public void goToAccountPage() {
         header().clickAccount();
         loginPage().fillLoginForm(credentials);
@@ -19,6 +23,8 @@ public class NavigateTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Go to the constructor page")
+    @Description("Checking that the user can get to the constructor page. When click on the \"constructor\" button in the header")
     public void goToConstructor() {
         header().clickAccount();
         loginPage().fillLoginForm(credentials);
@@ -27,6 +33,8 @@ public class NavigateTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Go to the constructor page (home page)")
+    @Description("Checking that the user can get to the constructor (home page) page. When click on the logo in the header")
     public void goToMainPage() {
         header().clickAccount();
         loginPage().fillLoginForm(credentials);

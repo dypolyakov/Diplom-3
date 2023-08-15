@@ -5,6 +5,8 @@ import com.dimqa.generator.UserGenerator;
 import com.dimqa.model.User;
 import com.dimqa.constants.URLs;
 import com.dimqa.tests.TestBase;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,6 +15,8 @@ public class RegistrationTest extends TestBase {
     private final UserGenerator userGenerator = new UserGenerator();
 
     @Test
+    @DisplayName("Successful registration on the site")
+    @Description("Checking that the user can register on the site using valid data")
     public void testRegistration() {
         header().clickAccount();
         accountPage().clickRegistration();
@@ -25,6 +29,8 @@ public class RegistrationTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Incorrect password length")
+    @Description("Check that the password length must be more than 5 characters long")
     public void invalidPasswordLength() {
         header().clickAccount();
         accountPage().clickRegistration();
