@@ -9,6 +9,8 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static io.restassured.RestAssured.given;
+
 public class RegistrationTest extends TestBase {
 
     private final UserGenerator userGenerator = new UserGenerator();
@@ -20,11 +22,14 @@ public class RegistrationTest extends TestBase {
         header().clickAccount();
         accountPage().clickRegistration();
         User user = userGenerator.random();
+        System.out.println(user.getEmail());
+        System.out.println(user.getPassword());
         registrationPage().fillForm(user);
         registrationPage().clickRegistrationButton();
         loginPage().waitingForLoading();
         Assert.assertEquals(loginPage().getHeadingText(), Texts.LOGIN_PAGE_HEADING);
         Assert.assertEquals(getCurrentUrl(), URLs.LOGIN_PAGE);
+        deleteUser(user);
     }
 
     @Test

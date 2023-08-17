@@ -43,6 +43,11 @@
             <artifactId>allure-rest-assured</artifactId>
             <version>2.22.2</version>
         </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.3.1</version>
+        </dependency>
     </dependencies>
 
     <build>
