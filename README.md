@@ -1,4 +1,4 @@
-# Учебный проект. Автоматизация тестирования веб-приложения Stellar Burgers
+# Учебный проект. UI-тесты для веб-приложения Stellar Burgers
 Протестировано веб-приложение [Stellar Burgers](https://stellarburgers.nomoreparties.site/).
 
 Стэк:
