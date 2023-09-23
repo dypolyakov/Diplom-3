@@ -1,7 +1,7 @@
-# Тестовый проект. Автоматизация тестирования веб-приложения Stellar Burgers
+# Учебный проект. Автоматизация тестирования веб-приложения Stellar Burgers
 Протестировано веб-приложение [Stellar Burgers](https://stellarburgers.nomoreparties.site/).
 
-В проекте используется:
+Стэк:
 - Java 11
 - Selenium 4.11.0
 - JUnit 4.13.2
